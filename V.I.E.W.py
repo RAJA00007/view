@@ -51,9 +51,7 @@ def display_output(output):
     print(f"Display Output: {output}")
 
 def classify_object(distance, radar_data):
-    # Dummy classification logic
-    # You can modify this logic as per your radar data interpretation
-    # Assuming radar_data includes the type of object detected
+    
     if radar_data in ["bird", "balloon"]:
         return True, None  # Safe
     elif radar_data in ["fighter jet", "drone"]:
@@ -64,7 +62,7 @@ def main():
     while True:
         servo.rotate_continuously()
         distance = infrared_sensor.get_distance()
-        radar_data = radar.get_data()  # Assuming this returns the object type
+        radar_data = radar.get_data() 
         location = gps_module.get_location()
         time_stamp = time.time()
         log_sensor_data(time_stamp, distance, radar_data, location)
